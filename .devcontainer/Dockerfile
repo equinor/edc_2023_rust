@@ -12,3 +12,6 @@ RUN sudo apt-get update ; sudo apt-get install -y vim tmux openssh-server
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+RUN git clone https://github.com/cdriehuys/axum-jwks.git
+WORKDIR axum-jwks
+RUN git checkout v0.5.0
